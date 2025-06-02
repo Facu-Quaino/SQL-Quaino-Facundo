@@ -66,6 +66,17 @@ CREATE TABLE Prestamo (
     FOREIGN KEY (id_libro) REFERENCES Libro(id_libro)
 );
 
+-- Tabla Multa
+CREATE TABLE Multa (
+    id_multa INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT,
+    id_prestamo INT,
+    monto DECIMAL(10,2),
+    fecha_multa DATE,
+    FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario),
+    FOREIGN KEY (id_prestamo) REFERENCES Prestamo(id_prestamo)
+);
+
 -- datos de prueba
 
 -- Insertar Editoriales
